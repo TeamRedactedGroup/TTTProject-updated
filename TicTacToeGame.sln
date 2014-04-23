@@ -1,7 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{706BAA47-4A1D-8015-1325-04C96E55CF8C}") = "TicTacToeGame", "Assembly-CSharp.csproj", "{4E10B223-CDF1-55C9-A117-5010398D8177}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{4163F818-5E0D-2C50-286A-B0743C8C37EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +8,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E10B223-CDF1-55C9-A117-5010398D8177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E10B223-CDF1-55C9-A117-5010398D8177}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E10B223-CDF1-55C9-A117-5010398D8177}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E10B223-CDF1-55C9-A117-5010398D8177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4163F818-5E0D-2C50-286A-B0743C8C37EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4163F818-5E0D-2C50-286A-B0743C8C37EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4163F818-5E0D-2C50-286A-B0743C8C37EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4163F818-5E0D-2C50-286A-B0743C8C37EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-														GlobalSection(MonoDevelopProperties) = preSolution
+	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -35,5 +34,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal
