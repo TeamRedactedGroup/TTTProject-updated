@@ -1,0 +1,302 @@
+Initialize engine version: 4.3.4f1 (e444f76e01cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [aticfx32.dll 8.17.10.1129]
+    Renderer: ATI Mobility Radeon HD 4650
+    Vendor:   ATI
+    VRAM:     1017 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\RobLaptop\Documents\TTTProject\TTTtest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\RobLaptop\Documents\TTTProject\TTTtest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\RobLaptop\Documents\TTTProject\TTTtest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\RobLaptop\Documents\TTTProject\TTTtest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.058 seconds
+desktop: 1366x768 60Hz; virtual: 3286x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found.
+<RI> Input initialized.
+UnloadTime: 1.060944 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 122.
+Total: 2.591538 ms (FindLiveObjects: 0.050814 ms CreateObjectMapping: 0.031951 ms MarkObjects: 0.334143 ms  DeleteObjects: 0.075836 ms)
+
+UnloadTime: 0.761832 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 450.
+Total: 2.154225 ms (FindLiveObjects: 0.072372 ms CreateObjectMapping: 0.041190 ms MarkObjects: 0.369174 ms  DeleteObjects: 0.012318 ms)
+
+Board Initialized
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name Wins!
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name , 4 , 2 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Easy Bob , 1 , 2 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name , 1 , 2 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 3.566252 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 152.
+Total: 2.941850 ms (FindLiveObjects: 0.026562 ms CreateObjectMapping: 0.036955 ms MarkObjects: 0.384958 ms  DeleteObjects: 0.090850 ms)
+
+UnloadTime: 0.890408 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 439.
+Total: 2.634268 ms (FindLiveObjects: 0.063133 ms CreateObjectMapping: 0.037340 ms MarkObjects: 0.502755 ms  DeleteObjects: 0.045425 ms)
+
+Board Initialized
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name Wins!
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name , 4 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Easy Bob , 1 , 2 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name , 2 , 2 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 3.758346 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 152.
+Total: 2.527250 ms (FindLiveObjects: 0.026562 ms CreateObjectMapping: 0.034261 ms MarkObjects: 0.376874 ms  DeleteObjects: 0.089310 ms)
+
+UnloadTime: 0.876549 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 439.
+Total: 2.538414 ms (FindLiveObjects: 0.062363 ms CreateObjectMapping: 0.038495 ms MarkObjects: 0.423453 ms  DeleteObjects: 0.045040 ms)
+
+Board Initialized
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name Wins!
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name , 5 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Easy Bob , 1 , 2 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name , 2 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 4.324234 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 152.
+Total: 2.568055 ms (FindLiveObjects: 0.026177 ms CreateObjectMapping: 0.035801 ms MarkObjects: 0.432692 ms  DeleteObjects: 0.090850 ms)
+
+UnloadTime: 0.871545 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 155.
+Total: 3.162046 ms (FindLiveObjects: 0.028486 ms CreateObjectMapping: 0.031951 ms MarkObjects: 0.414214 ms  DeleteObjects: 0.043500 ms)
+
+UnloadTime: 0.894642 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 153.
+Total: 2.543033 ms (FindLiveObjects: 0.028486 ms CreateObjectMapping: 0.035416 ms MarkObjects: 0.404206 ms  DeleteObjects: 0.068522 ms)
+
+UnloadTime: 0.739504 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 450.
+Total: 2.541493 ms (FindLiveObjects: 0.063518 ms CreateObjectMapping: 0.038110 ms MarkObjects: 0.448091 ms  DeleteObjects: 0.012318 ms)
+
+Board Initialized
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (1, 1)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (4, 3)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (2, 4)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (2, 3)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (0, 2)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name Wins!
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (1, 1)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (1, 1)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (2, 2)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (2, 3)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (0, 2)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Placing piece at (1, 2)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name Wins!
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Easy Bob was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name , 6 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Easy Bob , 1 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name , 2 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 3.975847 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 150.
+Total: 2.788636 ms (FindLiveObjects: 0.026177 ms CreateObjectMapping: 0.037340 ms MarkObjects: 0.432692 ms  DeleteObjects: 0.088540 ms)
+
+UnloadTime: 0.882324 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 155.
+Total: 2.729738 ms (FindLiveObjects: 0.028101 ms CreateObjectMapping: 0.033106 ms MarkObjects: 0.445396 ms  DeleteObjects: 0.042730 ms)
+
+UnloadTime: 0.875779 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 152.
+Total: 2.971876 ms (FindLiveObjects: 0.029256 ms CreateObjectMapping: 0.036955 ms MarkObjects: 0.543945 ms  DeleteObjects: 0.068907 ms)
+
+UnloadTime: 0.746818 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 450.
+Total: 2.994589 ms (FindLiveObjects: 0.065057 ms CreateObjectMapping: 0.042345 ms MarkObjects: 0.483892 ms  DeleteObjects: 0.012703 ms)
+
+Board Initialized
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name Wins!
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name was found
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 1 name , 7 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Easy Bob , 1 , 3 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Player 2 name , 2 , 4 , 0
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 3.319879 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 152.
+Total: 2.578064 ms (FindLiveObjects: 0.026177 ms CreateObjectMapping: 0.038880 ms MarkObjects: 0.451170 ms  DeleteObjects: 0.090080 ms)
+
+UnloadTime: 0.909271 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 155.
+Total: 2.847920 ms (FindLiveObjects: 0.028871 ms CreateObjectMapping: 0.033491 ms MarkObjects: 0.595915 ms  DeleteObjects: 0.043500 ms)
+
