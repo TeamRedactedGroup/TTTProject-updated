@@ -297,7 +297,7 @@ public class UserInterface : MonoBehaviour
 		stringToEdit = GUI.TextField(new Rect(screenWidth * 0.4f, screenHeight * 0.2f, buttonWidth * 0.5f, buttonHeight * 0.4f), stringToEdit,25);
 
 		//create Enter button to input text
-		if(EnterName) 
+		if(EnterName && stringToEdit != player2Name && stringToEdit != "Invalid name") 
 		{
 			player1Name = stringToEdit;
 			NewP1Screen	= false;
@@ -305,6 +305,9 @@ public class UserInterface : MonoBehaviour
 			stringToEdit = "";
 			ResetAIFlags();
 			//Application.LoadLevel("Start");
+		}
+		else if (EnterName && stringToEdit != player2Name) {
+			stringToEdit = "Invalid name";
 		}
 		
 		// Return to previous screen
@@ -330,7 +333,7 @@ public class UserInterface : MonoBehaviour
 		stringToEdit = GUI.TextField(new Rect(screenWidth * 0.4f, screenHeight * 0.2f, buttonWidth * 0.5f, buttonHeight * 0.4f), stringToEdit,25);
 		
 		//create Enter button to input text
-		if(EnterName) 
+		if(EnterName && stringToEdit != player1Name && stringToEdit != "Invalid name") 
 		{
 			player2Name = stringToEdit;
 			NewP2Screen	= false;
@@ -338,6 +341,9 @@ public class UserInterface : MonoBehaviour
 			stringToEdit = "";
 			ResetAIFlags();
 			//Application.LoadLevel("Start");
+		}
+		else if (EnterName && stringToEdit != player1Name){
+			stringToEdit = "Invalid name";
 		}
 		
 		// Return to previous screen
@@ -428,7 +434,7 @@ public class UserInterface : MonoBehaviour
 	// Displays scores
 	void scoresMenu()
 	{
-		scrollViewVector = GUI.BeginScrollView(new Rect(screenWidth * 0.3f, screenHeight * 0.25f, screenWidth * 0.6f, screenHeight * 0.6f), scrollViewVector, new Rect(0, 0, 400, 1500));
+		scrollViewVector = GUI.BeginScrollView(new Rect(screenWidth * 0.3f, screenHeight * 0.25f, screenWidth * 0.6f, screenHeight * 0.6f), scrollViewVector, new Rect(0, 0, 400, 2000));
 		/*Vector2 = GUI.BeginScrollView(new Rect(scrollbox locx, scrollbox locy, scrollbox width, scrollbox height),
 		 * Vector2, 
 		 * new Rect(text area locx, text area locy, text area width, text area height));*/

@@ -1,11 +1,11 @@
-Player 1 name,17,15,0
+Player 1 name,18,15,0
 Easy Bob,8,11,1
 Player 2 name,2,4,0
 Cunning Clive,6,7,0
 Master Shifu,5,0,1
 Player 1,1,1,2
 Player 2,0,0,2
-OkHereWeGo,1,0,0
+OkHereWeGo,1,1,0
 AndThereWeAre,0,1,0
 OHMyGod,2,1,0
 okthen,1,1,0
@@ -19,3 +19,5 @@ Mister Shifu,1,2,0
 myuser,0,1,1
 BIG BO,1,0,0
 Testing this,1,1,0
+uhoh,1,0,0
+ohuh,0,1,0
