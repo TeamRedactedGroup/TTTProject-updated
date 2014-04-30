@@ -16,9 +16,10 @@ public class EndScreen : MonoBehaviour {
 													" is liek O.K. i guess i mean wutevs...",
 													".rar", " is Tic Tac Toe-tally AWESOME :D",
 													": YOU DEFEATED"};
-	static string p1n, p2n, w;
+	static string	player1Name,
+					player2name,
+					winner;
 	static bool draw;
-	//static bool resetAIfirst;
 	static string winMsg;
 	const int numMsgs = 7;
 	#endregion
@@ -27,7 +28,6 @@ public class EndScreen : MonoBehaviour {
 	void Start () {
 		screenHeight 			= Screen.height;
 		screenWidth 			= Screen.width;
-		//resetAIfirst			= false;
 		buttonWidth				= screenWidth/4;
 		buttonHeight			= screenHeight/12;
 		labelWidth				= screenWidth/2;
@@ -36,9 +36,12 @@ public class EndScreen : MonoBehaviour {
 		winLabelText.normal.textColor = Color.yellow;
 		GUI.backgroundColor		= Color.gray;
 		winLabelText.alignment	= TextAnchor.UpperCenter;
-		w = GameInfo.GetWinner();
-		draw = GameInfo.IsItADraw();
+		//player1Name				= Player.GetPlayer1Name();
+		//player2name				= Player.GetPlayer2Name();
+		//winner					= GameInfo.GetWinner();
+		//draw					= GameInfo.IsItADraw();
 		SetWinMsg();
+		Debug.Log("Instantiated EndScreen");
 	}
 	//Label Template -->  GUI.Label (new Rect(loc x, loc y, size x, size y), "contents");
 
@@ -46,7 +49,7 @@ public class EndScreen : MonoBehaviour {
 
 		GUI.Label (new Rect((screenWidth/2) - (labelWidth/2),
 		                    (screenHeight/2) - (labelHeight/0.75f),
-		                    labelWidth, labelHeight), w + winMsg, winLabelText);
+		                    labelWidth, labelHeight), GameInfo.GetWinner() + winMsg, winLabelText);
 
 		if(GUI.Button (new Rect((screenWidth/2) - (buttonWidth/2), // Retry button
 		                        (screenHeight/2) - (buttonHeight/1.25f),
@@ -62,8 +65,6 @@ public class EndScreen : MonoBehaviour {
 	}
 
 	public static void ExecuteHistorySystem() {
-		//Debug.Log("In EndScreen, p1name = " + Player.GetPlayer1Name() + "  & winner = " + GameInfo.GetWinner());
-		//Debug.Log("In EndScreen, p2name = " + Player.GetPlayer2Name() + "  & winner = " + GameInfo.GetWinner());
 		History.PopulatePlayerHistory();
 		History.UpdatePlayerHistory(Player.GetPlayer1Name(), GameInfo.GetWinner());
 		History.UpdatePlayerHistory(Player.GetPlayer2Name(), GameInfo.GetWinner());
@@ -72,7 +73,7 @@ public class EndScreen : MonoBehaviour {
 	}
 
 	void SetWinMsg() {
-		if(draw) {
+		if(GameInfo.IsItADraw()) {
 			winMsg = "Everybody loses!!! :(";
 		}
 		else {
@@ -80,9 +81,5 @@ public class EndScreen : MonoBehaviour {
 			winMsg = winMsgArr[msgNum.Next(numMsgs)];
 		}
 	}
-
-	/*public static void ResetRAF() {
-		resetAIfirst = true;
-	}*/
 	#endregion
 }

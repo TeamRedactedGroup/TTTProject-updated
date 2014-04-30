@@ -42,7 +42,6 @@ public class Player : MonoBehaviour {
 		p1Shape		= 'x';
 		p2Shape		= 'o';
 		altTurns	= true;		// True = P1, false = P2/AI
-		//FirstAIturn = false;	// May not need this
 		CreateObjects();
 	}
 
@@ -50,38 +49,27 @@ public class Player : MonoBehaviour {
 	void Update () {
 		// Detects release of the left mouse button
 		if(Input.GetMouseButtonUp(0)) {
+			//CheckWinConditions();
 			if(altTurns) {
 				if(P1.GetMove()) {
 					altTurns = false;
-					if(AIflag) {
-						if(P2.GetMove()) {
-							altTurns = true;
-						}
-					}
 				}
 			}
 			else if (!altTurns) {
 				if(P2.GetMove()) {
 					altTurns = true;
 				}
-			};
-
-			// Checks win flag or max turn count
-			if(gameWon || GameInfo.IsItADraw()) {
-				if(GameInfo.IsItADraw()) {
-					Debug.Log("No one wins!");
-				}
-				EndScreen.ExecuteHistorySystem();
-				Application.LoadLevel("End"); // Load game over sceen
-			};
+			}
 		}
+
+		CheckWinConditions();
+
 		/* This is how the AI takes its first move. It only occurs
 		 * once per game, and only if the AI has been chosen to go first*/
 		if(AITurnFirst) {
 			AITurnFirst = false;
 			if(P2.GetMove()) {
 				altTurns = true;
-				//EndScreen.ResetRAF();
 			}
 		}
 	}
@@ -89,7 +77,16 @@ public class Player : MonoBehaviour {
 	void CreateObjects() {
 		P1 = new PlayerClass(X_Piece, p1Shape);
 		if(AIflag) {
-			P2 = new AIClass(O_Piece, p2Shape, AIlevel); }
+			if(AIlevel == 0) {
+				P2 = new AIClass(O_Piece, p2Shape);
+			}
+			else if (AIlevel == 1) {
+				P2 = new AIMediumClass(O_Piece, p2Shape);
+			}
+			else if (AIlevel == 2) {
+				P2 = new AIHardClass(O_Piece, p2Shape);
+			}
+		}
 		else {
 			P2 = new PlayerClass(O_Piece, p2Shape); }
 	}
@@ -113,9 +110,15 @@ public class Player : MonoBehaviour {
 			return player2Name; }
 	}
 
-	/*public static void SetAIFirst() { // Dont think this is needed
-		AITurnFirst = true;
-	}*/
+	public static void CheckWinConditions() {
+		if(gameWon || GameInfo.IsItADraw()) {
+			if(GameInfo.IsItADraw()) {
+				Debug.Log("No one wins!");
+			}
+			EndScreen.ExecuteHistorySystem();
+			Application.LoadLevel("End"); // Load game over sceen
+		}
+	}
 
 	public static void CheckWinState() {
 		// Checks both win state arrays for a win condition
@@ -136,3 +139,53 @@ public class Player : MonoBehaviour {
 	}
 	#endregion
 }
+
+
+
+/*
+// Detects release of the left mouse button
+if(Input.GetMouseButtonUp(0)) {
+	Debug.Log("In MouseButton IF");
+	if(altTurns) {
+		if(P1.GetMove()) {
+			Debug.Log("In P1.GetMove IF");
+			altTurns = false;
+			CheckWinState();
+			CheckWinConditions();
+			if(AIflag) {
+				if(P2.GetMove()) {
+					Debug.Log("In P2.GetMove IF");
+					altTurns = true;
+					CheckWinState();
+					CheckWinConditions();
+				}
+			}
+		}
+	}
+	else if (!altTurns) {
+		if(P2.GetMove()) {
+			altTurns = true;
+		}
+	}
+	
+	// Checks win flag or max turn count
+	Debug.Log("Before Check gamewin/draw");
+	if(gameWon || GameInfo.IsItADraw()) {
+		if(GameInfo.IsItADraw()) {
+			Debug.Log("No one wins!");
+		}
+		Debug.Log("In Check gamewin/draw, before Exehistsys");
+		EndScreen.ExecuteHistorySystem();
+		Debug.Log("In Check gamewin/draw, after Exehistsys");
+		Application.LoadLevel("End"); // Load game over screen
+	}
+}
+//This is how the AI takes its first move. It only occurs
+//once per game, and only if the AI has been chosen to go first
+if(AITurnFirst) {
+	AITurnFirst = false;
+	if(P2.GetMove()) {
+		altTurns = true;
+	}
+}
+*/

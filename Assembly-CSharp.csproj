@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AIClass.cs" />
+     <Compile Include="Assets\Scripts\AIHardClass.cs" />
+     <Compile Include="Assets\Scripts\AIMediumClass.cs" />
      <Compile Include="Assets\Scripts\BoardArray.cs" />
      <Compile Include="Assets\Scripts\BoardSpace.cs" />
      <Compile Include="Assets\Scripts\EndScreen.cs" />

@@ -7,7 +7,7 @@ public class History : MonoBehaviour {
 	#region Variables
 	const char		DELIM = ',';
 	const string	gameHistory = "TTT_Game_History.txt",
-					guestName = "Guest";
+					guestName 	= "Guest";
 	const int 		numRecords 	= 100,
 					numOfFields = 4,
 					maxCount 	= 999,
@@ -34,17 +34,21 @@ public class History : MonoBehaviour {
 			int count = 0;
 			readIn = readFile.ReadLine();
 			while(count < numRecords && readIn != null) {
+
 				inputLine = readIn.Split(DELIM); // splits line into string array
+
 				for(int j = 0; j < numOfFields; j++) {
 					PlayerHistory[count, j] = inputLine[j];
 				}
 				count++;
+
 				currentRecords = count;
 				readIn = readFile.ReadLine();
 			}
 			readFile.Close();
 			fileIO.Close();
 
+			// Initializes all array spots after last record to empty string
 			for(int k = count; k < numRecords; k++) {
 				for(int i = 0; i < numOfFields; i++) {
 					PlayerHistory[k, i] = "";
@@ -56,13 +60,14 @@ public class History : MonoBehaviour {
 	public static void UpdatePlayerHistory(string pName, string win) {
 		playerFound = false;
 		string[] newPlayer = new string[numOfFields];
+
 		if(pName != guestName) {
 			int count = 0;
+
 			while(count < currentRecords && !playerFound) {
 				if(PlayerHistory[count,nameIndex] == pName) { // If name exists in the history file
 					playerIndex = count;
 					playerFound = true;
-					Debug.Log(pName + " was found");
 				}
 				count++;
 			}
@@ -73,16 +78,11 @@ public class History : MonoBehaviour {
 				newPlayer[nameIndex] = pName;
 			}
 
-			//Debug.Log("name: " + pName + " & playerIndex: " + playerIndex);
-
 			if(pName == win) { // if player was the winner
 				if(playerFound) {
-					//Debug.Log(pName + " wins was " + PlayerHistory[playerIndex, winIndex]);
 					PlayerHistory[playerIndex, winIndex] = IncrementValue(PlayerHistory[playerIndex, winIndex]);
-					//Debug.Log(pName + " wins is now " + PlayerHistory[playerIndex, winIndex]);
 				}
 				else {
-					//Debug.Log(pName + " win++");
 					newPlayer[winIndex] = "1";
 					newPlayer[lossIndex] = "0";
 					newPlayer[drawIndex] = "0";
@@ -90,12 +90,9 @@ public class History : MonoBehaviour {
 			}
 			else if (GameInfo.IsItADraw()){
 				if(playerFound) {
-					//Debug.Log(pName + " draw was " + PlayerHistory[playerIndex, drawIndex]);
 					PlayerHistory[playerIndex, drawIndex] = IncrementValue(PlayerHistory[playerIndex, drawIndex]);
-					//Debug.Log(pName + " draws is now " + PlayerHistory[playerIndex, drawIndex]);
 				}
 				else {
-					//Debug.Log(pName + " draw++");
 					newPlayer[winIndex] = "0";
 					newPlayer[lossIndex] = "0";
 					newPlayer[drawIndex] = "1";
@@ -103,12 +100,9 @@ public class History : MonoBehaviour {
 			}
 			else {
 				if(playerFound) {
-					//Debug.Log(pName + " losses was " + PlayerHistory[playerIndex, lossIndex]);
 					PlayerHistory[playerIndex, lossIndex] = IncrementValue(PlayerHistory[playerIndex, lossIndex]);
-					//Debug.Log(pName + " losses is now " + PlayerHistory[playerIndex, lossIndex]);
 				}
 				else {
-					//Debug.Log(pName + " loss++");
 					newPlayer[winIndex] = "0";
 					newPlayer[lossIndex] = "1";
 					newPlayer[drawIndex] = "0";
@@ -126,6 +120,7 @@ public class History : MonoBehaviour {
 	static string IncrementValue(string s) {
 		string tempStr = s;
 		int tempInt = System.Convert.ToInt32(s);
+
 		if(tempInt >= minCount && tempInt <= maxCount) {
 			tempInt++;
 			tempStr = tempInt.ToString();
@@ -135,11 +130,12 @@ public class History : MonoBehaviour {
 
 
 	static public void WriteHistoryFile() {
+		/*FileMode.Create overwrites any existing file, which is what we want since the 
+		  most updated player history data will always be stored in the PlayerHistory
+		  array every time the game launches*/
 		FileStream fileIO = new FileStream(gameHistory, FileMode.Create, FileAccess.Write);
 		StreamWriter writeFile = new StreamWriter(fileIO); // Initializes file reader object
 		string tempStr;
-
-		//Debug.Log("This is coming from WriteHistoryFile, currentRecords = " + currentRecords);
 
 		for(int i = 0; i < currentRecords; i++) {
 			tempStr = PlayerHistory[i, 0] + DELIM + PlayerHistory[i, 1] + DELIM + PlayerHistory[i, 2] + DELIM + PlayerHistory[i, 3];
@@ -149,11 +145,17 @@ public class History : MonoBehaviour {
 		fileIO.Close(); 
 	}
 
+	static public int GetCurrentRecords() {
+		return currentRecords;
+	}
+
+	// Displays the non-empty contents of the PlayerHistory array line-by-line in the Console window
 	static public bool DisplayArray() {
+		string emptyString = "";
 		string[] str = new string[numOfFields];
 		for(int i = 0; i < currentRecords; i++) {
 			for(int j = 0; j < numOfFields; j++ ) {
-				if(PlayerHistory[i, j] == "") {
+				if(PlayerHistory[i, j] == emptyString) {
 					return true;
 				}
 				str[j] = PlayerHistory[i, j];
@@ -162,6 +164,32 @@ public class History : MonoBehaviour {
 			str[0] = str[1] = str[2] = str[3] = "";
 		}
 		return true;
+	}
+
+	// Returns each entry in the PlayerHistory array as a formatted string
+	static public string GetPlayerHistoryEntry() {
+		string emptyString = "", tempStr = "";
+		string[] str = new string[numOfFields];
+		Debug.Log("From GetPlayerHistoryEntry -- currentRecords = " + currentRecords);
+		for(int j = 0; j < currentRecords; j++ ) {
+			for(int k = 0; k < numOfFields; k++ ) {
+				if(PlayerHistory[j, k] == emptyString) {
+					return emptyString;
+				}
+				str[k] = PlayerHistory[j, k];
+			}
+			tempStr = tempStr + str[0] + "\r\n" + str[1] + " / " + str[2] + " / " + str[3] + "\r\n\r\n";
+		}
+		return tempStr;
+	}
+
+	static public string GetPlayerHistoryNames(int i) {
+		if(PlayerHistory[i, 0] == "") {
+			return "";
+		}
+		else {
+			return PlayerHistory[i, 0];
+		}
 	}
 	#endregion
 }

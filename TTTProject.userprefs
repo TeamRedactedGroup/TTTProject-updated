@@ -1,16 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\History.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameInfo.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="27" Column="19" />
-      <File FileName="Assets\Scripts\PlayerClass.cs" Line="41" Column="46" />
-      <File FileName="Assets\Scripts\GameInfo.cs" Line="27" Column="26" />
-      <File FileName="Assets\Scripts\BoardArray.cs" Line="137" Column="27" />
-      <File FileName="Assets\Scripts\BoardSpace.cs" Line="9" Column="10" />
-      <File FileName="Assets\Scripts\EndScreen.cs" Line="58" Column="65" />
-      <File FileName="Assets\Scripts\AIClass.cs" Line="78" Column="19" />
-      <File FileName="Assets\Scripts\History.cs" Line="164" Column="14" />
-      <File FileName="Assets\Scripts\UserInterface.cs" Line="226" Column="6" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerClass.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameInfo.cs" Line="52" Column="82" />
+      <File FileName="Assets\Scripts\BoardArray.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BoardSpace.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EndScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AIClass.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\History.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UserInterface.cs" Line="370" Column="4" />
+      <File FileName="Assets\Scripts\AIMediumClass.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AIHardClass.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

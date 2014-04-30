@@ -2,39 +2,15 @@
 using System.Collections;
 
 public class AIClass : PlayerClass {
-	#region Variables
-	int AILevel;
-	#endregion
-
 	#region Functions
 	public AIClass() {}
 	
-	public AIClass (GameObject piece, char pShape, int difficulty) {
+	public AIClass (GameObject piece, char pShape) {
 		gamePiece	= piece;
 		shape		= pShape;
-		AILevel		= difficulty;
 	}
 	
 	public override bool GetMove() {
-		if(AILevel == 0) {
-			if(AIEasy()) {
-				return true;
-			}
-		}
-		else if(AILevel == 1) {
-			if(AINormal()) {
-				return true;
-			}
-		}
-		else if(AILevel == 2) {
-			if(AIHard()) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	bool AIEasy() {
 		int		AIPieceCoordX, AIPieceCoordZ;
 		float	AIPieceCoordY;
 		System.Random ran = new System.Random();
@@ -45,48 +21,46 @@ public class AIClass : PlayerClass {
 			AIPieceCoordZ = ran.Next (BoardArray.nAcross);
 			
 			//StartCoroutine(WaitForAI());
-			
+
 			// Check if object is occupied by a game piece. If vacant, place piece of that player 
 			gameBoardSpace = GameObject.Find("piece" + AIPieceCoordX + "," + AIPieceCoordZ);
+
 			Vector3 boardLocation = new Vector3(AIPieceCoordX, AIPieceCoordY, AIPieceCoordZ);
 			Debug.Log("Placing piece at (" + AIPieceCoordX + ", " + AIPieceCoordZ + ")");
 			
 			// Check if object is vacant. If vacant, place piece of that player
-			if(gameBoardSpace.tag != "Occupied") {
+			if(gameBoardSpace.tag != "o_Occupied" && gameBoardSpace.tag != "x_Occupied" && !GameInfo.IsItADraw()) {
+
 				// Create player's game piece in game space
 				Instantiate(gamePiece, boardLocation, Quaternion.identity);
-				
+
 				// Tag player-clicked space as occupied
-				gameBoardSpace.tag = "Occupied";
+				if(shape == 'x') {
+					gameBoardSpace.tag = "x_Occupied";
+				}
+				else if(shape == 'o') {
+					gameBoardSpace.tag = "o_Occupied";
+				}
 				
 				// Get a reference to the GameObject that was clicked
 				BoardSpace thisSpace = (BoardSpace)gameBoardSpace.GetComponent("BoardSpace");
+
 				// Call the function of the clicked piece to update win state information
 				thisSpace.UpdateSpaceState(shape);
-				
-				Player.CheckWinState();
-				// Alternate player name UI colors to denote whose turn it is
-				GameInfo.ChangeColor();
+
 				// Increment turn counter
 				GameInfo.IncrementTurnCount();
+				/*if(GameInfo.IsItADraw()) {
+					break;
+				}*/
+				Player.CheckWinState();
+
+				// Alternate player name UI colors to denote whose turn it is
+				GameInfo.ChangeColor();
 				return true;
 			}
-		} while(gameBoardSpace.tag == "Occupied");
+		} while(gameBoardSpace.tag == "x_Occupied" || gameBoardSpace.tag == "o_Occupied");
 		return false;
 	}
-
-	bool AINormal() {
-		// Normal AI routine goes here
-		return true;
-	}
-
-	bool AIHard() {
-		// Hard AI routine goes here
-		return true;
-	}
-
-	/*IEnumerator WaitForAI() {
-		yield return new WaitForSeconds(2.0f);
-	}*/
 	#endregion
 }

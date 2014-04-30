@@ -6,8 +6,8 @@ public class GameInfo : MonoBehaviour {
 
 	#region Variables
 	static int		turnCount;
-	static float	screenHeight 	= Screen.height,
-					screenWidth 	= Screen.width,
+	static float	screenHeight,
+					screenWidth,
 					labelWidth,
 					labelHeight;
 	static string 	winner,
@@ -20,15 +20,13 @@ public class GameInfo : MonoBehaviour {
 
 	#region Functions
 	void Start () {
+		turnCount		= 0; // tracks # of turns
 		screenHeight	= Screen.height;
 		screenWidth 	= Screen.width;
 		labelWidth		= screenWidth/10;
 		labelHeight		= screenHeight/10;
 		SetInitialTextColors();
-		turnCount		= 0; // tracks # of turns
 		winner			= "";
-		p1name			= Player.GetPlayer1Name();
-		p2name			= Player.GetPlayer2Name();
 	}
 
 	// Alternates player name colors on the ui every turn
@@ -51,11 +49,11 @@ public class GameInfo : MonoBehaviour {
 		
 		GUI.Label (new Rect((Screen.width/8) - (labelWidth/2),
 		                    (Screen.height/2) - (labelHeight/2),
-		                    labelWidth, labelHeight), p1name, p1Text);
+		                    labelWidth, labelHeight), Player.GetPlayer1Name(), p1Text);
 		
-		GUI.Label (new Rect((Screen.width) - ((Screen.width/6) - (labelWidth/2)),
+		GUI.Label (new Rect((Screen.width) - ((Screen.width/7) - (labelWidth/2)),
 		                    (Screen.height/2) - (labelHeight/2),
-		                    labelWidth, labelHeight), p2name, p2Text);
+		                    labelWidth, labelHeight), Player.GetPlayer2Name(), p2Text);
 	}
 	
 
@@ -73,7 +71,10 @@ public class GameInfo : MonoBehaviour {
 	}
 
 	public static bool IsItADraw() {
-		return (turnCount >= 25);
+		if(turnCount >= 25) {
+			return true;
+		}
+		return false;	
 	}
 
 	public static void IncrementTurnCount() {
