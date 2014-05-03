@@ -48,6 +48,7 @@ public class AIMediumClass : AIClass {
 					thisSpace.UpdateSpaceState (shape);
 					GameInfo.IncrementTurnCount();
 					Player.CheckWinState();
+					GameInfo.ChangeColor();
 					return true;
 				}
 			} while(gameBoardSpace.tag == "x_Occupied" || gameBoardSpace.tag == "o_Occupied");
@@ -60,6 +61,7 @@ public class AIMediumClass : AIClass {
 			thisSpace.UpdateSpaceState (shape);
 			GameInfo.IncrementTurnCount();
 			Player.CheckWinState();
+			GameInfo.ChangeColor();
 			return true;
 		}
 		else if (boardLocation2 != nullVector) {
@@ -70,6 +72,7 @@ public class AIMediumClass : AIClass {
 			thisSpace.UpdateSpaceState (shape);
 			GameInfo.IncrementTurnCount();
 			Player.CheckWinState();
+			GameInfo.ChangeColor();
 			return true;
 		}
 		return false;

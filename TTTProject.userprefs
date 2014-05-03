@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UserInterface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="24" Column="50" />
+      <File FileName="Assets\Scripts\PlayerClass.cs" Line="11" Column="46" />
+      <File FileName="Assets\Scripts\GameInfo.cs" Line="26" Column="32" />
       <File FileName="Assets\Scripts\BoardArray.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BoardSpace.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EndScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AIClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\History.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UserInterface.cs" Line="437" Column="176" />
+      <File FileName="Assets\Scripts\BoardSpace.cs" Line="21" Column="44" />
+      <File FileName="Assets\Scripts\EndScreen.cs" Line="25" Column="12" />
+      <File FileName="Assets\Scripts\AIClass.cs" Line="24" Column="4" />
+      <File FileName="Assets\Scripts\History.cs" Line="155" Column="42" />
+      <File FileName="Assets\Scripts\UserInterface.cs" Line="12" Column="2" />
       <File FileName="Assets\Scripts\AIMediumClass.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\AIHardClass.cs" Line="1" Column="1" />
     </Files>

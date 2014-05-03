@@ -1,18 +1,18 @@
-Player 1 name,18,15,0
-Easy Bob,8,11,1
-Player 2 name,2,4,0
+Player 1 name,18,16,0
+Easy Bob,8,12,1
+Player 2 name,3,4,0
 Cunning Clive,6,7,0
-Master Shifu,5,0,1
-Player 1,1,1,2
+Master Shifu,12,2,7
+Player 1,2,1,2
 Player 2,0,0,2
-OkHereWeGo,1,1,0
+OkHereWeGo,2,2,0
 AndThereWeAre,0,1,0
 OHMyGod,2,1,0
 okthen,1,1,0
 alrightthen,0,1,0
 oktryingagain,2,0,0
 okthistime,0,2,0
-YESSSSS,2,0,0
+YESSSSS,3,0,0
 maybe,0,2,0
 ThisIsNow,2,1,0
 Mister Shifu,1,2,0

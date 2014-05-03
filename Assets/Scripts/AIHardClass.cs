@@ -64,6 +64,7 @@ public class AIHardClass : AIMediumClass
 										thisSpace.UpdateSpaceState (shape);
 										GameInfo.IncrementTurnCount();
 										Player.CheckWinState();
+										GameInfo.ChangeColor();
 										return true;
 								}
 						} while(gameBoardSpace.tag == "x_Occupied" || gameBoardSpace.tag == "o_Occupied");
@@ -75,6 +76,7 @@ public class AIHardClass : AIMediumClass
 						thisSpace.UpdateSpaceState (shape);
 						GameInfo.IncrementTurnCount();
 						Player.CheckWinState();
+						GameInfo.ChangeColor();
 						return true;
 				} else if (boardLocation2 != nullVector) { //If the ai can block a win
 						Instantiate (gamePiece, boardLocation2, Quaternion.identity);
@@ -84,6 +86,7 @@ public class AIHardClass : AIMediumClass
 						thisSpace.UpdateSpaceState (shape);
 						GameInfo.IncrementTurnCount();
 						Player.CheckWinState();
+						GameInfo.ChangeColor();
 						return true;
 				} else if (boardLocation3 != nullVector) { ///If the ai can block 2 in a row in the inner 9
 						Instantiate (gamePiece, boardLocation3, Quaternion.identity);
@@ -93,6 +96,7 @@ public class AIHardClass : AIMediumClass
 						thisSpace.UpdateSpaceState (shape);
 						GameInfo.IncrementTurnCount();
 						Player.CheckWinState();
+						GameInfo.ChangeColor();
 						return true;
 				} else if (boardLocation4 != nullVector) { ///If the ai can block someone from setting up on edges
 						Instantiate (gamePiece, boardLocation4, Quaternion.identity);
@@ -102,6 +106,7 @@ public class AIHardClass : AIMediumClass
 						thisSpace.UpdateSpaceState (shape);
 						GameInfo.IncrementTurnCount();
 						Player.CheckWinState();
+						GameInfo.ChangeColor();
 						return true;
 				} else if (boardLocation5 != nullVector) { ///If the ai can take a high value point (this should always happen when the above dont)
 						Instantiate (gamePiece, boardLocation5, Quaternion.identity);
@@ -111,6 +116,7 @@ public class AIHardClass : AIMediumClass
 						thisSpace.UpdateSpaceState (shape);
 						GameInfo.IncrementTurnCount();
 						Player.CheckWinState();
+						GameInfo.ChangeColor();
 						return true;
 				} else if (boardLocation6 != nullVector) { ///If the ai can take a high value point (this should always happen when the above dont)
 					Instantiate (gamePiece, boardLocation6, Quaternion.identity);
@@ -120,6 +126,7 @@ public class AIHardClass : AIMediumClass
 					thisSpace.UpdateSpaceState (shape);
 					GameInfo.IncrementTurnCount();
 					Player.CheckWinState();
+					GameInfo.ChangeColor();
 					return true;
 				} else if (boardLocation7 != nullVector) { ///If the ai can take a high value point (this should always happen when the above dont)
 					Instantiate (gamePiece, boardLocation7, Quaternion.identity);
@@ -129,6 +136,7 @@ public class AIHardClass : AIMediumClass
 					thisSpace.UpdateSpaceState (shape);
 					GameInfo.IncrementTurnCount();
 					Player.CheckWinState();
+					GameInfo.ChangeColor();
 					return true;
 				}
 		return false;

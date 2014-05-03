@@ -132,7 +132,7 @@ public class History : MonoBehaviour {
 	static public void WriteHistoryFile() {
 		/*FileMode.Create overwrites any existing file, which is what we want since the 
 		  most updated player history data will always be stored in the PlayerHistory
-		  array every time the game launches*/
+		  array every time the game launches, or when a game is completed*/
 		FileStream fileIO = new FileStream(gameHistory, FileMode.Create, FileAccess.Write);
 		StreamWriter writeFile = new StreamWriter(fileIO); // Initializes file reader object
 		string tempStr;

@@ -25,6 +25,8 @@ public class GameInfo : MonoBehaviour {
 		screenWidth 	= Screen.width;
 		labelWidth		= screenWidth/10;
 		labelHeight		= screenHeight/10;
+		p1Text.fontSize = 20;
+		p2Text.fontSize = 20;
 		SetInitialTextColors();
 		winner			= "";
 	}
@@ -51,7 +53,7 @@ public class GameInfo : MonoBehaviour {
 		                    (Screen.height/2) - (labelHeight/2),
 		                    labelWidth, labelHeight), Player.GetPlayer1Name(), p1Text);
 		
-		GUI.Label (new Rect((Screen.width) - ((Screen.width/7) - (labelWidth/2)),
+		GUI.Label (new Rect((Screen.width) - ((Screen.width/5) - (labelWidth/2)),
 		                    (Screen.height/2) - (labelHeight/2),
 		                    labelWidth, labelHeight), Player.GetPlayer2Name(), p2Text);
 	}

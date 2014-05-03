@@ -28,7 +28,9 @@ public class UserInterface : MonoBehaviour
 				IsThereAI 		= false,
 				DoesP1GoFirst 	= false,
 				DoesAIGoFirst 	= false,
-				EnterName		= false;
+				EnterName		= false,
+				IsPlayer1		= false,
+				IsPlayer2		= false;
 
 	static string[] returningPlayers;
 	static string	stringToEdit,
@@ -157,6 +159,7 @@ public class UserInterface : MonoBehaviour
 			AboutScreen		= false;
 			NewP1Screen		= true;
 			newPlayer1Menu();
+			IsPlayer1		= true;
 			//player1Name 	= tempName;
 		}
 		
@@ -164,6 +167,7 @@ public class UserInterface : MonoBehaviour
 		if (GUI.Button (new Rect (screenWidth * 0.11f, screenHeight * 0.15f, buttonWidth * 0.58f, buttonHeight * 0.5f), "Returning User")) 
 		{
 			ReturningP1 = true;
+			IsPlayer1	= true;
 			//ResetAIFlags();
 		}
 
@@ -171,6 +175,7 @@ public class UserInterface : MonoBehaviour
 		if (GUI.Button (new Rect (screenWidth * 0.11f, screenHeight * 0.2f, buttonWidth * 0.58f, buttonHeight * 0.5f), "Guest")) 
 		{
 			player1Name = "Guest";
+			IsPlayer1	= true;
 			ResetAIFlags();
 		}
 
@@ -178,13 +183,13 @@ public class UserInterface : MonoBehaviour
 		/*if (GUI.Button (new Rect (screenWidth * 0.11f, screenHeight * 0.25f, buttonWidth * 0.58f, buttonHeight * 0.5f), "AI")) 
 		{
 			//IsThereAI = true;
-		}
+		}*/
 
 		//Ready flag
-		if (PlayerPrefs.HasKey ("player1")) 
+		if (IsPlayer1) 
 		{
-			GUI.Box (new Rect (screenWidth * 0.11f, screenHeight * 0.35f, buttonWidth * 0.58f, buttonHeight * 0.6f), "Ready");
-		}*/
+			GUI.Box (new Rect (screenWidth * 0.11f, screenHeight * 0.35f, buttonWidth * 0.58f, buttonHeight * 0.6f), player1Name + " Ready");
+		}
 		
 		//Player 2 options text box
 		GUI.Box (new Rect (screenWidth * 0.65f, screenHeight * 0.05f, screenWidth * 0.25f, screenHeight * 0.5f), "Player2");
@@ -198,6 +203,7 @@ public class UserInterface : MonoBehaviour
 			AboutScreen		= false;
 			NewP2Screen		= true;
 			newPlayer2Menu();
+			IsPlayer2		= true;
 			//player2Name 	= tempName;
 		}
 		
@@ -205,12 +211,14 @@ public class UserInterface : MonoBehaviour
 		if (GUI.Button (new Rect (screenWidth * 0.66f, screenHeight * 0.15f, buttonWidth * 0.58f, buttonHeight * 0.5f), "Returning User")) 
 		{
 			ReturningP2 = true;
+			IsPlayer2	= true;
 		}
 
 		//Player 2 has the ability to play as a guest
-		if (GUI.Button (new Rect (screenWidth * 0.66f, screenHeight * 0.2f, buttonWidth * 0.58f, buttonHeight * 0.5f), "Guest")) 
+		if (GUI.Button (new Rect (screenWidth * 0.66f, screenHeight * 0.2f, buttonWidth * 0.58f, buttonHeight * 0.5f), "Guest"))
 		{
 			player2Name = "Guest";
+			IsPlayer2	= true;
 			ResetAIFlags();
 		}
 
@@ -219,13 +227,14 @@ public class UserInterface : MonoBehaviour
 		{
 			IsThereAI = true;
 			AIScreen = true;
+			IsPlayer2 = true;
 		}
 
 		//Ready flag 2
-		/*if (PlayerPrefs.HasKey ("player2")) 
+		if (IsPlayer2) 
 		{
-			GUI.Box (new Rect (screenWidth * 0.66f, screenHeight * 0.35f, buttonWidth * 0.58f, buttonHeight * 0.6f), "Ready!!");
-		}*/
+			GUI.Box (new Rect (screenWidth * 0.66f, screenHeight * 0.35f, buttonWidth * 0.58f, buttonHeight * 0.6f), player2Name + " Ready!!");
+		}
 		
 		// Menu button box
 		GUI.Box (new Rect (screenWidth * 0.1f, screenHeight * 0.6f, screenWidth * 0.25f, screenHeight * 0.25f), "");
@@ -235,11 +244,12 @@ public class UserInterface : MonoBehaviour
 		{
 			StartScreen		= false;
 			ScoresScreen	= false;
+			ResetAIFlags();
 			AboutScreen		= false;
 			NewP1Screen		= false;
 			NewP2Screen		= false;
 			MenuScreen		= true;
-			ResetAIFlags();
+			//ResetAIFlags();
 			Application.LoadLevel ("Menu");
 		}
 
@@ -247,19 +257,21 @@ public class UserInterface : MonoBehaviour
 		GUI.Box (new Rect (screenWidth * 0.65f, screenHeight * 0.6f, screenWidth * 0.25f, screenHeight * 0.25f), "");
 
 		//Player will be directed to the game screen
-		if (GUI.Button (new Rect (screenWidth * 0.66f, screenHeight * 0.63f, buttonWidth * 0.58f, buttonHeight * 0.7f), "Play!")) 
-		{
-			Debug.Log(player1Name + ", " + player2Name + ", " + IsThereAI + ", " + DoesAIGoFirst + ", " + AIDifficultyLevel);
-			//Creates the Player class and initializes it based on choices made on the main menu
-			new Player(player1Name, player2Name, IsThereAI, DoesAIGoFirst, AIDifficultyLevel);
-			ResetMatchToMatchFlags();
-			/*StartScreen		= false;
-			ScoresScreen	= false;
-			AboutScreen		= false;
-			NewP1Screen		= false;
-			NewP2Screen		= false;
-			MenuScreen		= false;*/
-			Application.LoadLevel ("Gameplay");
+		if(IsPlayer1 && IsPlayer2) {
+			if (GUI.Button (new Rect (screenWidth * 0.66f, screenHeight * 0.63f, buttonWidth * 0.58f, buttonHeight * 0.7f), "Play!")) 
+			{
+				Debug.Log(player1Name + ", " + player2Name + ", " + IsThereAI + ", " + DoesAIGoFirst + ", " + AIDifficultyLevel);
+				//Creates the Player class and initializes it based on choices made on the main menu
+				new Player(player1Name, player2Name, IsThereAI, DoesAIGoFirst, AIDifficultyLevel);
+				ResetMatchToMatchFlags();
+				/*StartScreen		= false;
+				ScoresScreen	= false;
+				AboutScreen		= false;
+				NewP1Screen		= false;
+				NewP2Screen		= false;
+				MenuScreen		= false;*/
+				Application.LoadLevel ("Gameplay");
+			}
 		}
 
 		//Player can quit the game
@@ -296,8 +308,14 @@ public class UserInterface : MonoBehaviour
 		//Create text inputbox.
 		stringToEdit = GUI.TextField(new Rect(screenWidth * 0.4f, screenHeight * 0.2f, buttonWidth * 0.5f, buttonHeight * 0.4f), stringToEdit,25);
 
+		for(int i = 0; i < stringToEdit.Length; i++) {
+			if(stringToEdit[i] == ',') {
+				stringToEdit = ""; 
+			}
+		}
+
 		//create Enter button to input text
-		if(EnterName && stringToEdit != player2Name && stringToEdit != "Invalid name") 
+		if(EnterName && stringToEdit != player2Name && stringToEdit != "Invalid name" && stringToEdit != "" && stringToEdit != " ")
 		{
 			player1Name = stringToEdit;
 			NewP1Screen	= false;
@@ -331,9 +349,15 @@ public class UserInterface : MonoBehaviour
 		EnterName = GUI.Button(new Rect(screenWidth * 0.4f, screenHeight * 0.3f, buttonWidth * 0.5f, buttonHeight * 0.4f), "Enter");
 		//Create text inputbox.
 		stringToEdit = GUI.TextField(new Rect(screenWidth * 0.4f, screenHeight * 0.2f, buttonWidth * 0.5f, buttonHeight * 0.4f), stringToEdit,25);
-		
+
+		for(int i = 0; i < stringToEdit.Length; i++) {
+			if(stringToEdit[i] == ',') {
+				stringToEdit = ""; 
+			}
+		}
+
 		//create Enter button to input text
-		if(EnterName && stringToEdit != player1Name && stringToEdit != "Invalid name") 
+		if(EnterName && stringToEdit != player1Name && stringToEdit != "Invalid name" && stringToEdit != "" && stringToEdit != " ") 
 		{
 			player2Name = stringToEdit;
 			NewP2Screen	= false;
@@ -475,8 +499,9 @@ public class UserInterface : MonoBehaviour
 			player2Name = "Easy Bob";
 			//Debug.Log("From AIMenu - Diff lvl 0  &&  AIDifficultyLevel = " + AIDifficultyLevel);
 			//PlayerPrefs.SetString ("currentPlayer2", "Easy Bob");
-			AIScreen = false;
+			//AIScreen = false;
 			StartScreen = true;
+			AIScreen = false;
 			//Application.LoadLevel ("Start");
 		}
 		if(GUI.Button(new Rect(screenWidth * 0.4f, screenHeight * 0.15f, buttonWidth * 0.5f, buttonHeight * 0.4f), "Normal")) 
@@ -485,8 +510,9 @@ public class UserInterface : MonoBehaviour
 			player2Name = "Cunning Clive";
 			//Debug.Log("From AIMenu - Diff lvl 1  &&  AIDifficultyLevel = " + AIDifficultyLevel);
 			//PlayerPrefs.SetString ("currentPlayer2", "Cunning Clive");
-			AIScreen = false;
+			//AIScreen = false;
 			StartScreen = true;
+			AIScreen = false;
 			//Application.LoadLevel ("Start");
 		}
 		if(GUI.Button(new Rect(screenWidth * 0.4f, screenHeight * 0.2f, buttonWidth * 0.5f, buttonHeight * 0.4f), "Hard")) 
@@ -495,8 +521,9 @@ public class UserInterface : MonoBehaviour
 			player2Name = "Master Shifu";
 			//Debug.Log("From AIMenu - Diff lvl 2  &&  AIDifficultyLevel = " + AIDifficultyLevel);
 			//PlayerPrefs.SetString ("currentPlayer2", "Master Shifu");
-			AIScreen = false;
+			//AIScreen = false;
 			StartScreen = true;
+			AIScreen = false;
 			//Application.LoadLevel ("Start");
 		}
 	}
